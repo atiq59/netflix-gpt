@@ -1,11 +1,10 @@
 import './App.css'
+import Body from './components/pages/body/page'
 
 function App() {
 
   return (
-    <>
-      <p className="font-bold">Netflix GPT</p>
-    </>
+    <Body />
   )
 }
 
