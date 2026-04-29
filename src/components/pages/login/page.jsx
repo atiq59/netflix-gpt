@@ -2,6 +2,11 @@ import { useRef, useState } from "react";
 import Header from "../Header/page";
 import { Eye, EyeOff } from "lucide-react";
 import { validateForm } from "../../../utils/validate";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../../../utils/firebase";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -24,7 +29,44 @@ const Login = () => {
     );
 
     setFormError(error.errors);
-    console.log(error.errors);
+    console.log(error);
+
+    if (!error.isValid) return;
+
+    if (!isSignInForm) {
+      //Sign Up
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value,
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error) => {
+          alert(error.message);
+          // ..
+        });
+    } else {
+      //Sign In
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value,
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log("signed in", user);
+          // ...
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    }
   };
 
   const toggleLoginForm = () => {
@@ -64,13 +106,17 @@ const Login = () => {
 
           {!isSignInForm && (
             <>
-                <input
+              <input
                 ref={fullName}
                 type="text"
                 placeholder="Full Name"
                 className="w-full px-4 py-3 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-red-600 placeholder-gray-400"
-                />
-                {formError?.fullName && <span className="text-red-500 text-sm">{formError.fullName}</span>}
+              />
+              {formError?.fullName && (
+                <span className="text-red-500 text-sm">
+                  {formError.fullName}
+                </span>
+              )}
             </>
           )}
           <input
@@ -79,7 +125,9 @@ const Login = () => {
             placeholder="Email or phone number"
             className="w-full px-4 py-3 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-red-600 placeholder-gray-400"
           />
-          {formError?.email && <span className="text-red-500 text-sm">{formError.email}</span>}
+          {formError?.email && (
+            <span className="text-red-500 text-sm">{formError.email}</span>
+          )}
 
           <div className="relative">
             <input
@@ -95,7 +143,9 @@ const Login = () => {
               {showPassword.password ? <Eye size={18} /> : <EyeOff size={18} />}
             </span>
           </div>
-          {formError?.password && <span className="text-red-500 text-sm">{formError.password}</span>}
+          {formError?.password && (
+            <span className="text-red-500 text-sm">{formError.password}</span>
+          )}
 
           {!isSignInForm && (
             <>
@@ -117,7 +167,11 @@ const Login = () => {
                   )}
                 </span>
               </div>
-              {formError?.confirmPassword && <span className="text-red-500 text-sm">{formError.confirmPassword}</span>}
+              {formError?.confirmPassword && (
+                <span className="text-red-500 text-sm">
+                  {formError.confirmPassword}
+                </span>
+              )}
             </>
           )}
 
