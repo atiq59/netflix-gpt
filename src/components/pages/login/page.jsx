@@ -5,8 +5,11 @@ import { validateForm } from "../../../utils/validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../../../utils/firebase";
+import { useDispatch } from "react-redux";
+import { addUser } from "../../../utils/userSlice";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -20,6 +23,8 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const confirmPassword = useRef(null);
+
+  const dispatch = useDispatch();
 
   const handleSubmitButton = () => {
     const error = validateForm(
@@ -43,7 +48,15 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          console.log(user);
+          updateProfile(user, {
+            displayName: fullName.current.value, photoURL: "https://lh3.googleusercontent.com/ogw/AF2bZyhjKXdZ76V47lvvXbPQSYZh5kQpV6Xta6Dq3mcdfolaC-NO=s64-c-mo"
+          }).then(() => {
+            // Profile updated!
+            const { uid, email, displayName, photoURL } = auth.currentUser;
+            dispatch(addUser({ uid: uid, email: email, displayName: displayName, photoURL: photoURL }))
+          }).catch((error) => {
+              alert(error.message);
+          });
           // ...
         })
         .catch((error) => {
@@ -57,10 +70,8 @@ const Login = () => {
         email.current.value,
         password.current.value,
       )
-        .then((userCredential) => {
+        .then(() => {
           // Signed in
-          const user = userCredential.user;
-          console.log("signed in", user);
           // ...
         })
         .catch((error) => {
