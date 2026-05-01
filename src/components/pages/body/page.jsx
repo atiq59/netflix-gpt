@@ -13,7 +13,7 @@ const Body = () => {
   const routes = useRoutes(routesConfig);
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
 
         const { uid, email, displayName, photoURL } = user;
@@ -25,6 +25,9 @@ const Body = () => {
         navigate("/")
       }
     });
+
+    return () => unsubscribe();
+    
   }, [])
 
   return <div>{routes}</div>;
