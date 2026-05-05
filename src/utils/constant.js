@@ -3,3 +3,15 @@ export const NETFLIX_LOGO = "https://help.nflxext.com/helpcenter/OneTrust/oneTru
 export const AVTAAR = "https://occ-0-6247-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABdpkabKqQAxyWzo6QW_ZnPz1IZLqlmNfK-t4L1VIeV1DY00JhLo_LMVFp936keDxj-V5UELAVJrU--iUUY2MaDxQSSO-0qw.png?r=e6e";
 
 export const PHOTO_URL = "https://lh3.googleusercontent.com/ogw/AF2bZyhjKXdZ76V47lvvXbPQSYZh5kQpV6Xta6Dq3mcdfolaC-NO=s64-c-mo";
+
+export const API_OPTIONS = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZDllNWU0NWQzMjAzMmFlMjZiYTIwMGViMGQ2OGI2MyIsIm5iZiI6MTc3NzY0MzgwNy40ODE5OTk5LCJzdWIiOiI2OWY0YjExZjUxYTcwYWE3ZGNiZDEyNzciLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.bQJA7EcLT8WJLGUP8Wd2zku9bJTg-BeieumhKdLdnPw'
+  }
+};
+
+export const NOW_PLAYING_MOVIES = "https://api.themoviedb.org/3/movie/now_playing?&page=1";
+
+export const VIDEO_URL = "https://api.themoviedb.org/3/movie/";
