@@ -10,7 +10,7 @@ import {
 import { auth } from "../../../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../../../utils/userSlice";
-import { PHOTO_URL } from "../../../utils/constant";
+import { BACKGROUND_IMG_URL, PHOTO_URL } from "../../../utils/constant";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -99,7 +99,7 @@ const Login = () => {
       <div className="relative w-full h-screen flex items-center justify-center">
         {/* Background Image */}
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/e9e4878c-fb84-4457-ba49-564bfd8dc758/web/IN-en-20260420-TRIFECTA-perspective_ec3c1e8c-3b79-481d-84c4-51b7dcb7800e_large.jpg"
+          src={BACKGROUND_IMG_URL}
           alt="Background"
           className="absolute inset-0 w-full h-full object-cover"
         />

@@ -4,6 +4,8 @@ export const AVTAAR = "https://occ-0-6247-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6c
 
 export const PHOTO_URL = "https://lh3.googleusercontent.com/ogw/AF2bZyhjKXdZ76V47lvvXbPQSYZh5kQpV6Xta6Dq3mcdfolaC-NO=s64-c-mo";
 
+export const BACKGROUND_IMG_URL = "https://assets.nflxext.com/ffe/siteui/vlv3/e9e4878c-fb84-4457-ba49-564bfd8dc758/web/IN-en-20260420-TRIFECTA-perspective_ec3c1e8c-3b79-481d-84c4-51b7dcb7800e_large.jpg";
+
 export const API_OPTIONS = {
   method: 'GET',
   headers: {
@@ -23,3 +25,9 @@ export const UPCOMING_MOVIES = "https://api.themoviedb.org/3/movie/upcoming?&pag
 export const VIDEO_URL = "https://api.themoviedb.org/3/movie/";
 
 export const IMAGE_CDN_URL = "https://image.tmdb.org/t/p/w400";
+
+export const SUPPORTED_LANGUAGES = [
+  { name: "English", code: "en" },
+  { name: "Hindi", code: "hindi" },
+  { name: "Spanish", code: "spanish" }
+]
