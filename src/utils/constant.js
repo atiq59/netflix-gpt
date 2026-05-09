@@ -31,3 +31,5 @@ export const SUPPORTED_LANGUAGES = [
   { name: "Hindi", code: "hindi" },
   { name: "Spanish", code: "spanish" }
 ]
+
+export const OPENAI_KEY = import.meta.env.VITE_OPENROUTER_API_KEY;
