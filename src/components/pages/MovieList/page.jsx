@@ -24,7 +24,7 @@ const MovieList = ({ title, movies }) => {
   return (
     <div className="p-4 relative group">
       {/* Title */}
-      <h2 className="text-2xl font-bold text-white mb-2 px-5">{title}</h2>
+      <h2 className="text-lg md:text-2xl font-bold text-white mb-2 px-5">{title}</h2>
 
       {/* Left Arrow */}
       <button

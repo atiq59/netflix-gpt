@@ -11,7 +11,7 @@ const MainConatiner = () => {
   const { original_title, overview, id } = mainMovie;
 
   return (
-    <div>
+    <div className="hidden md:inline-block bg-black">
       <VideoTitle title={original_title} overview={overview} />
       <VideoBackground movieId={id} />
     </div>

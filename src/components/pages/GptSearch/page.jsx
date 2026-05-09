@@ -11,8 +11,10 @@ const GptSearch = () => {
                 alt="Background"
                 className="fixed inset-0 w-full h-full object-cover -z-10"
             />
-            <GptSearchBar />
-            <GptSearchMovieSuggestion />
+            <div className="pt-[30%] md:pt-0">
+                <GptSearchBar />
+                <GptSearchMovieSuggestion />
+            </div>
         </div>
     )
 }

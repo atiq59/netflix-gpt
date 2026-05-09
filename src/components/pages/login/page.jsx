@@ -96,7 +96,7 @@ const Login = () => {
     <div className="min-h-screen bg-black overflow-y-auto">
       <Header />
 
-      <div className="relative w-full h-screen flex items-center justify-center">
+      <div className="relative w-full h-screen flex items-center justify-center mt-[-40%] md:mt-0">
         {/* Background Image */}
         <img
           src={BACKGROUND_IMG_URL}
