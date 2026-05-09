@@ -21,6 +21,7 @@ const useGptSearchMovies = () => {
   const handleSearch = async (searchText) => {
     setLoading(true);
     try {
+      
       const gptQuery = `Act as a movie recommendation engine and suggest some movies for the query: ${searchText} and don't ask questions just give me the list of movies of bollywood and hollywood. Only give me names of 5 movies, comma seperated like the example. Example: Movie1, Movie2, Movie3, Movie4, Movie5. Don't give me any explanation just give me the list of movies.`;
 
       const response = await fetch(
@@ -48,18 +49,18 @@ const useGptSearchMovies = () => {
 
       const data = await response.json();
 
-      console.log("DATA:", data);
       const gptMovies = data.choices[0].message.content
         .split(",")
         .map((movie) => movie.trim());
-      console.log("GPT MOVIES:", gptMovies);
-      const promiseArr = gptMovies.map((movie) => searchMoviesTmdb(movie));
+
+        const promiseArr = gptMovies.map((movie) => searchMoviesTmdb(movie));
 
       const tmdbMoviesData = await Promise.all(promiseArr);
-      console.log("MOVIES DATA:", tmdbMoviesData);
+
       dispatch(
         addGptMovieResults({ gptMovies: gptMovies, tmdbMoviesData: tmdbMoviesData }),
       );
+
     } catch (error) {
       console.log(error);
     } finally {
