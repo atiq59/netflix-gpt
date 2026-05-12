@@ -48,7 +48,7 @@ export const OPENAI_API_URL = "https://openrouter.ai/api/v1/chat/completions";
 export const ONENROUTER_API_OPTIONS = (gptQuery) => ({
   method: "POST",
   headers: {
-    Authorization: `Bearer ${import.meta.env.VITE_OPENROUTER_API_KEY}`,
+    Authorization: `Bearer ${import.meta.env.VITE_OPENROUTER_API_KEY || ""}`,
     "Content-Type": "application/json",
     "HTTP-Referer": "http://localhost:5173",
     "X-Title": "Test App",
