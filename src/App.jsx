@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux'
 import './App.css'
-import Body from './components/pages/body/page.jsx'
+import Body from './components/pages/Body/page.jsx'
 import appStore from './utils/appStore'
 
 function App() {
