@@ -1,5 +1,5 @@
 import { useNavigate, useRoutes } from "react-router-dom";
-import { routesConfig } from "../../routes/page.jsx";
+import { routesConfig } from "../../routes/page.jsx.jsx";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../../utils/firebase.js";
 import { useEffect } from "react";

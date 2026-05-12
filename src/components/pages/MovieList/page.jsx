@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import MovieCard from "../MovieCard/page";
+import MovieCard from "../MovieCard/page.jsx";
 import { MoveLeft, MoveRight } from "lucide-react";
 
 const MovieList = ({ title, movies }) => {

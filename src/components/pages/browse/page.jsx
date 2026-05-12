@@ -3,10 +3,10 @@ import useNowPlayingMovies from "../../../hooks/useNowPlayingMovies";
 import usePopularMovies from "../../../hooks/usePopularMovies";
 import useTopRatedMovies from "../../../hooks/useTopRatedMovies";
 import useUpcommingMovies from "../../../hooks/useUpcommingMovies";
-import GptSearch from "../GptSearch/page";
-import Header from "../Header/page";
-import MainConatiner from "../MainContainer.js/page";
-import SecondaryContainer from "../SecondaryContainer.js/page";
+import GptSearch from "../GptSearch/page.jsx";
+import Header from "../Header/page.jsx";
+import MainConatiner from "../MainContainer.js/page.jsx";
+import SecondaryContainer from "../SecondaryContainer.js/page.jsx";
 
 const Browse = () => {
   const gptSearchView = useSelector((store) => store.gpt.showGptSearch);

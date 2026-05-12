@@ -1,6 +1,6 @@
 import { BACKGROUND_IMG_URL } from "../../../utils/constant";
-import GptSearchBar from "../GptSearchBar/page";
-import GptSearchMovieSuggestion from "../GptSearchMovieSuggestion/page";
+import GptSearchBar from "../GptSearchBar/page.jsx";
+import GptSearchMovieSuggestion from "../GptSearchMovieSuggestion/page.jsx";
 
 const GptSearch = () => {
 
