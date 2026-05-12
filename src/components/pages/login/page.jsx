@@ -1,16 +1,16 @@
 import { useRef, useState } from "react";
 import Header from "../Header/page.jsx";
 import { Eye, EyeOff } from "lucide-react";
-import { validateForm } from "../../../utils/validate";
+import { validateForm } from "../../../utils/validate.js";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { auth } from "../../../utils/firebase";
+import { auth } from "../../../utils/firebase.js";
 import { useDispatch } from "react-redux";
-import { addUser } from "../../../utils/userSlice";
-import { BACKGROUND_IMG_URL, PHOTO_URL } from "../../../utils/constant";
+import { addUser } from "../../../utils/userSlice.js";
+import { BACKGROUND_IMG_URL, PHOTO_URL } from "../../../utils/constant.js";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);

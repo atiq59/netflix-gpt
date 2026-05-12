@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import useNowPlayingMovies from "../../../hooks/useNowPlayingMovies";
-import usePopularMovies from "../../../hooks/usePopularMovies";
-import useTopRatedMovies from "../../../hooks/useTopRatedMovies";
-import useUpcommingMovies from "../../../hooks/useUpcommingMovies";
+import useNowPlayingMovies from "../../../hooks/useNowPlayingMovies.js";
+import usePopularMovies from "../../../hooks/usePopularMovies.js";
+import useTopRatedMovies from "../../../hooks/useTopRatedMovies.js";
+import useUpcommingMovies from "../../../hooks/useUpcommingMovies.js";
 import GptSearch from "../GptSearch/page.jsx";
 import Header from "../Header/page.jsx";
 import MainConatiner from "../MainContainer.js/page.jsx";
