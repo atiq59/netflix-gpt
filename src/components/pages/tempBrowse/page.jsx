@@ -4,7 +4,7 @@ import usePopularMovies from "../../../hooks/usePopularMovies.js";
 import useTopRatedMovies from "../../../hooks/useTopRatedMovies.js";
 import useUpcommingMovies from "../../../hooks/useUpcommingMovies.js";
 import GptSearch from "../GptSearch/page.jsx";
-import Header from "../Header/page.jsx";
+import Header from "../tempHeader/page.jsx";
 import MainConatiner from "../MainContainer.js/page.jsx";
 import SecondaryContainer from "../SecondaryContainer.js/page.jsx";
 
