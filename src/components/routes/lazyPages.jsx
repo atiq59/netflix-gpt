@@ -1,4 +1,4 @@
 import { lazy } from "react";
 
-export const Login = lazy(() => import("../pages/Login/page.js"));
-export const Browse = lazy(() => import("../pages/Browse/page.js"));
+export const Login = lazy(() => import("../pages/Login/page"));
+export const Browse = lazy(() => import("../pages/Browse/page"));
